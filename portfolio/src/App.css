@@ -1,0 +1,126 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* homepage */
+
+.in-view {
+  opacity: 1; /* При необходимости настройте дополнительные стили для видимых карточек */
+  transition: opacity 0.5s ease; /* Добавьте плавный переход */
+}
+
+.visible {
+  opacity: 1;
+  z-index: 1;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+}
+
+
+/* Contact */
+
+.contact {
+  height: 100vh;
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  /* gap: 50px; */
+  justify-content: center;
+  
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+
+h1{
+  font-size: 100px;
+  line-height: 88px;
+}
+
+span{
+  font-weight: 300;
+}
+
+.formtContainer {
+  flex: 1;
+  position: relative;
+}
+
+.phoneSvg{
+  stroke: rgb(223, 119, 223);
+  position: absolute;
+  margin: auto;
+  z-index: -1;
+}
+
+/* .phone{
+  fill: rgb(148, 47, 148);
+} */
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input, textarea{
+  padding: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+button{
+  padding: 20px;
+  border: none;
+  background-color: violet;
+  cursor: pointer;
+  font-weight: 500;
+}
