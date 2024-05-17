@@ -1,0 +1,70 @@
+/* 
+.skill {
+  height: 100vh;
+
+}
+
+
+.skillsvg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 5px; 
+}
+
+.text {
+  color: gray;
+}
+
+.svg {
+  height: 100px;
+  padding: 100px;
+  fill: #a3a3a3;
+  transition: fill 0.2s;
+  cursor: pointer;
+  
+}
+
+svg:hover {
+  fill: #e28ae6;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Junge&display=swap');
+
+body {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Cormorant", serif; /* Убедитесь, что h4 использует правильный шрифт */
+  padding: 40px 0px;
+}
+
+.skill {
+  height: 100vh;
+}
+
+.skillsvg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px; /* Уменьшите gap для уменьшения расстояния между SVG */
+
+}
+
+.text {
+  color: gray;
+}
+
+.svg {
+  height: 100px;
+  padding: 80px; /* Уменьшите padding для уменьшения размера контейнера SVG */
+  fill: #a3a3a3;
+  transition: fill 0.2s;
+  cursor: pointer;
+}
+
+.svg:hover {
+  fill: #e28ae6;
+}

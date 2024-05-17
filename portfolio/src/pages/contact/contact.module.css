@@ -1,0 +1,73 @@
+.contact {
+    height: 100vh;
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+
+}
+
+.textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+h1 {
+    font-size: 100px;
+    line-height: 88px;
+    color: gray;
+}
+
+h2{
+    color: gray;
+}
+
+p {
+    font-weight: 300;
+}
+
+.formContainer {
+    flex: 1;
+    position: relative;
+}
+
+.phoneSvg {
+    stroke: rgb(141, 56, 141);
+    position: absolute;
+    margin: auto;
+    z-index: -1;
+    fill: rgb(141, 56, 141);
+}
+
+/* svg {
+    fill: rgb(141, 56, 141);
+    font-size: 200px;
+} */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input,
+textarea {
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+button {
+    padding: 20px;
+    border: none;
+    background-color: violet;
+    cursor: pointer;
+    font-weight: 500;
+}

@@ -1,11 +1,11 @@
 import './App.css';
 import HomePage from './pages/HomePage';
-import AboutMe from './pages/AboutMe';
-import Skills from './pages/Skills';
-import Project from './pages/Project';
-import Contacts from './pages/Contacts';
+import AboutMe from './pages/about/AboutMe';
+import Skills from './pages/skill/Skills';
+import Project from './pages/project/Project';
+import Contacts from './pages/contact/Contacts';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ParallaxProvider } from "react-scroll-parallax";
+
 
 const router = createBrowserRouter([
   {
