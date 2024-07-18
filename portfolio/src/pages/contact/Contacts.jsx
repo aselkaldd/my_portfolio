@@ -1,8 +1,8 @@
-import { motion, useInView } from "framer-motion"
-import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import styles from './contact.module.css'
-
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import styles from "./contact.module.css";
+import { useNavigate } from "react-router-dom";
 
 const variants = {
   initial: {
@@ -20,7 +20,6 @@ const variants = {
 };
 
 export default function Contacts() {
-
   const ref = useRef();
   const formRef = useRef();
   const [error, setError] = useState(false);
@@ -31,52 +30,77 @@ export default function Contacts() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_1l1tq35', 'template_zeknbsk', formRef.current, { publicKey: 'df4alLpNUGE6F5JSf' })
-      .then((result) => {
-        setSuccess(true);
-      }, (error) => {
-        setError(true);
-      },
+    emailjs
+      .sendForm("service_1l1tq35", "template_zeknbsk", formRef.current, {
+        publicKey: "df4alLpNUGE6F5JSf",
+      })
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
       );
   };
 
+  const navigate = useNavigate();
+  const handleBackClick = () => {
+    navigate("/");
+  };
+
   return (
-    <motion.div ref={ref} className={styles.contact} variants={variants} initial="initial" whileInView="animate" >
+    <div>
+      <div className={styles.header}>
+        <div>
+          <button onClick={handleBackClick} className={styles.button}>
+            <p>Back</p>
+          </button>
+        </div>
+      </div>
 
+      <motion.div
+        ref={ref}
+        className={styles.contact}
+        variants={variants}
+        initial="initial"
+        whileInView="animate"
+      >
+        <motion.div className={styles.textContainer} variants={variants}>
+          <motion.h1 variants={variants}>Let's work together</motion.h1>
 
-      <motion.div className={styles.textContainer} variants={variants}>
-        <motion.h1 variants={variants}>Let's work together</motion.h1>
+          <motion.div className="item" variants={variants}>
+            <h2>Mail</h2>
+            <p>kaldarbaeva.asel@gmail.com</p>
+          </motion.div>
 
-        <motion.div className='item' variants={variants}>
-          <h2>Mail</h2>
-          <p>kaldarbaeva.asel@gmail.com</p>
+          <motion.div className="item" variants={variants}>
+            <h2>Phone</h2>
+            <p>+49 178 908 976 1</p>
+          </motion.div>
         </motion.div>
 
-        <motion.div className='item' variants={variants}>
-          <h2>Phone</h2>
-          <p>+49 178 908 976 1</p>
-        </motion.div>
-
-      </motion.div>
-
-      <div className={styles.formContainer} >
-
-        <motion.div className={styles.phoneSvg}
-          initial={{ opacity: 1 }}
-          whileInView={{ opacity: 0 }}
-          transition={{ delay: 3, duration: 1 }}>
-
-          <motion.svg height="450px" width="450px"
-            viewBox="0 0 512.001 512.001">
-            <g>
+        <div className={styles.formContainer}>
+          <motion.div
+            className={styles.phoneSvg}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 0 }}
+            transition={{ delay: 3, duration: 1 }}
+          >
+            <motion.svg
+              height="450px"
+              width="450px"
+              viewBox="0 0 512.001 512.001"
+            >
               <g>
-                <motion.path
-                  strokeWidth={0.2}
-                  fill="none"
-                  initial={{ pathLength: 0 }}
-                  animate={isInView && { pathLength: 1 }}
-                  transition={{ duration: 3 }}
-                  d="M503.719,130.69l-2.081-4.992c-10.645-25.547-32.994-44.944-59.744-51.876c-1.11-0.293-2.219-0.574-3.319-0.849
+                <g>
+                  <motion.path
+                    strokeWidth={0.2}
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={isInView && { pathLength: 1 }}
+                    transition={{ duration: 3 }}
+                    d="M503.719,130.69l-2.081-4.992c-10.645-25.547-32.994-44.944-59.744-51.876c-1.11-0.293-2.219-0.574-3.319-0.849
 			c-13.736-3.474-28.232-6.578-43.087-9.226c-4.72-0.842-9.248,2.307-10.09,7.037s2.307,9.247,7.037,10.09
 			c14.45,2.576,28.538,5.593,41.898,8.971c1.047,0.262,2.082,0.523,3.157,0.807c21.551,5.586,39.529,21.189,48.092,41.739
 			l2.081,4.992c2.627,6.305,4.492,12.829,5.627,19.445l-117.125-24.465l-3.614-21.406c-0.563-3.333-3.006-6.038-6.263-6.937
@@ -92,18 +116,19 @@ export default function Contacts() {
 			c36.837,0,72.19,3.882,100.324,10.972l10.623,62.91c0.601,3.557,3.334,6.374,6.872,7.082l106.122,21.225
 			c0.15,0.038,0.302,0.073,0.455,0.103l15.427,3.081c0.572,0.114,1.144,0.169,1.708,0.169c3.612,0,6.932-2.259,8.187-5.774
 			C514.737,182.946,514.025,155.426,503.719,130.69z M491.559,195.19l-7.302-1.457c-0.148-0.038-0.298-0.072-0.45-0.102
-			l-100.7-20.14l-3.834-22.708l115.265,24.077C494.321,181.691,493.342,188.511,491.559,195.19z"/>
+			l-100.7-20.14l-3.834-22.708l115.265,24.077C494.321,181.691,493.342,188.511,491.559,195.19z"
+                  />
+                </g>
               </g>
-            </g>
-            <g>
               <g>
-                <motion.path
-                  strokeWidth={0.2}
-                  fill="none"
-                  initial={{ pathLength: 0 }}
-                  animate={isInView && { pathLength: 1 }}
-                  transition={{ duration: 3 }}
-                  d="M468.784,450.687l-3.913-44.333c-0.397-4.491-4.157-7.933-8.665-7.933h-11.787l-6.538-49.341
+                <g>
+                  <motion.path
+                    strokeWidth={0.2}
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={isInView && { pathLength: 1 }}
+                    transition={{ duration: 3 }}
+                    d="M468.784,450.687l-3.913-44.333c-0.397-4.491-4.157-7.933-8.665-7.933h-11.787l-6.538-49.341
 			c-0.63-4.762-4.998-8.113-9.766-7.481c-4.762,0.631-8.112,5.003-7.48,9.766l6.235,47.056H85.135l20.967-158.301
 			c0.81-6.111,5.405-11.083,11.432-12.372l33.286-7.115c12.918-2.76,22.943-13.388,24.95-26.444l2.891-18.825
 			c1.103-7.182,7.178-12.395,14.444-12.395h125.789c7.267,0,13.343,5.215,14.444,12.397l2.887,18.817
@@ -116,56 +141,59 @@ export default function Contacts() {
 			c-13.206,2.823-23.269,13.714-25.044,27.1l-21.27,160.584H55.801c-4.508,0-8.268,3.443-8.665,7.933l-3.913,44.334
 			c-0.216,2.431,0.602,4.84,2.249,6.64c1.648,1.799,3.976,2.824,6.415,2.824h65.169c4.805,0,8.699-3.895,8.699-8.699
 			s-3.894-8.699-8.699-8.699H61.389l2.378-26.937h384.475l2.379,26.937H146.053c-4.805,0-8.699,3.895-8.699,8.699
-			s3.893,8.699,8.699,8.699H460.12c2.44,0,4.768-1.025,6.415-2.825C468.183,455.526,468.999,453.117,468.784,450.687z"/>
+			s3.893,8.699,8.699,8.699H460.12c2.44,0,4.768-1.025,6.415-2.825C468.183,455.526,468.999,453.117,468.784,450.687z"
+                  />
+                </g>
               </g>
-            </g>
-            <g>
               <g>
-                <motion.path
-                  strokeWidth={0.2}
-                  fill="none"
-                  initial={{ pathLength: 0 }}
-                  animate={isInView && { pathLength: 1 }}
-                  transition={{ duration: 3 }}
-                  d="M256.004,200.189c-48.428,0-87.828,39.399-87.828,87.828c0,48.428,39.4,87.827,87.828,87.827
+                <g>
+                  <motion.path
+                    strokeWidth={0.2}
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={isInView && { pathLength: 1 }}
+                    transition={{ duration: 3 }}
+                    d="M256.004,200.189c-48.428,0-87.828,39.399-87.828,87.828c0,48.428,39.4,87.827,87.828,87.827
 			c48.428,0,87.828-39.399,87.828-87.827C343.831,239.589,304.432,200.189,256.004,200.189z M256.004,358.447
 			c-38.835,0-70.431-31.595-70.431-70.43c0-38.835,31.595-70.431,70.431-70.431c38.836,0,70.431,31.595,70.431,70.431
-			C326.434,326.853,294.839,358.447,256.004,358.447z"/>
+			C326.434,326.853,294.839,358.447,256.004,358.447z"
+                  />
+                </g>
               </g>
-            </g>
-            <g>
               <g>
-                <motion.path
-                  strokeWidth={0.2}
-                  fill="none"
-                  initial={{ pathLength: 0 }}
-                  animate={isInView && { pathLength: 1 }}
-                  transition={{ duration: 3 }}
-                  d="M256.004,255.974c-17.669,0-32.043,14.375-32.043,32.043s14.375,32.042,32.043,32.042
+                <g>
+                  <motion.path
+                    strokeWidth={0.2}
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={isInView && { pathLength: 1 }}
+                    transition={{ duration: 3 }}
+                    d="M256.004,255.974c-17.669,0-32.043,14.375-32.043,32.043s14.375,32.042,32.043,32.042
 			c17.669,0,32.043-14.375,32.043-32.042C288.047,270.349,273.672,255.974,256.004,255.974z M256.004,302.663
 			c-8.076,0-14.646-6.57-14.646-14.645s6.57-14.646,14.646-14.646c8.076,0,14.646,6.57,14.646,14.646
-			C270.65,296.093,264.079,302.663,256.004,302.663z"/>
+			C270.65,296.093,264.079,302.663,256.004,302.663z"
+                  />
+                </g>
               </g>
-            </g>
-          </motion.svg>
-        </motion.div>
+            </motion.svg>
+          </motion.div>
 
-        <motion.form
-          ref={formRef} onSubmit={sendEmail}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 4, duration: 1 }}>
-
-          <input type='text' required placeholder='Name' name='name' />
-          <input type='email' required placeholder='Email' name='email' />
-          <textarea rows={8} placeholder='Message' name='message' />
-          <button>Submit</button>
-          {/* {error && 'Error'}
+          <motion.form
+            ref={formRef}
+            onSubmit={sendEmail}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 4, duration: 1 }}
+          >
+            <input type="text" required placeholder="Name" name="name" />
+            <input type="email" required placeholder="Email" name="email" />
+            <textarea rows={8} placeholder="Message" name="message" />
+            <button>Submit</button>
+            {/* {error && 'Error'}
           {success && 'Success'} */}
-        </motion.form>
-
-      </div>
-
-    </motion.div>
-  )
+          </motion.form>
+        </div>
+      </motion.div>
+    </div>
+  );
 }

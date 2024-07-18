@@ -1,45 +1,25 @@
-/* 
-.skill {
-  height: 100vh;
-
+.about {
+  display: flex;
+  flex-direction: row;
 }
 
-
-.skillsvg {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 5px; 
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20px;
 }
 
-.text {
-  color: gray;
+.button {
+  border-radius: 5px;
+  margin-top: 40px;
+  background-color: #e18ae6;
+  width: 150px;
+  margin-left: 34px;
 }
 
-.svg {
-  height: 100px;
-  padding: 100px;
-  fill: #a3a3a3;
-  transition: fill 0.2s;
-  cursor: pointer;
-  
-}
-
-svg:hover {
-  fill: #e28ae6;
-} */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Junge&display=swap');
-
-body {
-  font-family: "Cormorant", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-h1 {
-  font-family: "Cormorant", serif; /* Убедитесь, что h4 использует правильный шрифт */
-  padding: 40px 0px;
+.button p {
+  color: rgb(85, 81, 81);
+  font-weight: bold;
 }
 
 .skill {
@@ -48,18 +28,18 @@ h1 {
 
 .skillsvg {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 10px; /* Уменьшите gap для уменьшения расстояния между SVG */
-
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+  margin-top: 70px;
 }
 
 .text {
   color: gray;
 }
 
-.svg {
+/* .svg {
   height: 100px;
-  padding: 80px; /* Уменьшите padding для уменьшения размера контейнера SVG */
+  padding: 80px;
   fill: #a3a3a3;
   transition: fill 0.2s;
   cursor: pointer;
@@ -67,4 +47,14 @@ h1 {
 
 .svg:hover {
   fill: #e28ae6;
+} */
+
+.icon {
+  font-size: 170px;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #e28ae6;
 }

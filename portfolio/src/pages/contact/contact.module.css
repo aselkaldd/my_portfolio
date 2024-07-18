@@ -1,47 +1,68 @@
 .contact {
-    height: 100vh;
-    max-width: 1366px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    justify-content: center;
+  height: 100vh;
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  margin-top: -100px;
+  /* transform: translateY(-50px); */
+}
 
+.header {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.button {
+  border-radius: 5px;
+  /* padding-top: 20px; */
+  background-color: #e18ae6;
+  width: 150px;
+  margin-left: 74px;
+}
+
+.button p {
+  color: rgb(85, 81, 81);
+  font-weight: bold;
 }
 
 .textContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 h1 {
-    font-size: 100px;
-    line-height: 88px;
-    color: gray;
+  font-size: 100px;
+  line-height: 88px;
+  color: gray;
 }
 
-h2{
-    color: gray;
+h2 {
+  color: gray;
 }
 
 p {
-    font-weight: 300;
+  color: rgb(85, 81, 81);
+  font-weight: bold;
 }
 
 .formContainer {
-    flex: 1;
-    position: relative;
+  flex: 1;
+  position: relative;
 }
 
 .phoneSvg {
-    stroke: rgb(141, 56, 141);
-    position: absolute;
-    margin: auto;
-    z-index: -1;
-    fill: rgb(141, 56, 141);
+  stroke: rgb(141, 56, 141);
+  position: absolute;
+  margin: auto;
+  z-index: -1;
+  fill: rgb(141, 56, 141);
 }
 
 /* svg {
@@ -50,24 +71,26 @@ p {
 } */
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 input,
 textarea {
-    padding: 20px;
-    background-color: transparent;
-    border: 1px solid gray;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
+  padding: 20px;
+  background-color: transparent;
+  border: 1px solid gray;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
 }
 
 button {
-    padding: 20px;
-    border: none;
-    background-color: violet;
-    cursor: pointer;
-    font-weight: 500;
+  padding: 20px;
+  border: none;
+  background-color: #e18ae6;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgb(85, 81, 81);
+  font-weight: bold;
 }
