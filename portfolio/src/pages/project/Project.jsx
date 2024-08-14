@@ -30,7 +30,12 @@ export default function Project() {
 
       <div className={project.projectchild} data-aos="fade-up">
         <div className={project.card} data-aos="fade-up" width="700px">
-          <a href="" target="_blank" rel="Sport News">
+          <a
+            href="https://github.com/aselkaldd/sport_news"
+            target="_blank"
+            rel="Sport News"
+          >
+            {" "}
             <img src={Sport} data-aos="zoom-in" />
           </a>
           <p>Sport News</p>
@@ -38,7 +43,7 @@ export default function Project() {
 
         <div className={project.card} data-aos="fade-up" width="700px">
           <a
-            href="https://github.com/PatrickZablocki/Jira_clone"
+            href="https://github.com/aselkaldd/jira-clone"
             target="_blank"
             rel="Jira"
           >
@@ -51,7 +56,7 @@ export default function Project() {
 
         <div className={project.card} data-aos="fade-up" width="700px">
           <a
-            href="https://github.com/saiddlkc/dastify-klonen"
+            href="https://dastify-navy.vercel.app/"
             target="_blank"
             rel="Dastify"
           >
